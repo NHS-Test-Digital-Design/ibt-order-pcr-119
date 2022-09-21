@@ -1,8 +1,8 @@
 
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  Home – GOV.UK Prototype Kit
+{% block beforeContent %}
+  {% include "includes/breadcrumbs.html" %}
 {% endblock %}
 
 {% block content %}
@@ -10,49 +10,116 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Test & trace service starter kit
-        <span class="govuk-caption-xl">Uses gov.uk prototype kit {{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of of test and trace services.
+        Get a free PCR test to check if you have coronavirus (COVID-19) 
+      </h1>
+    </div>
+  </div>
+  {# end grid row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">
+        If you're in Scotland, you might be eligible to get a free polymerase chain reaction (PCR) test to check if you have coronavirus (COVID-19).
       </p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you replace the content of this page with the start page content for your service.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <p>
-        {{ govukButton({
-          text: "Start now",
-          href: "/rename-to-your-service/service-step-template",
-          isStartButton: true,
-          classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-        }) }}
-      </p>
-
-      
-      <h2 class="govuk-heading-m">GOV.UK prototype kit Examples and documentation</h2>
+      {{ govukInsetText({
+        text: "In England, Wales and Northern Ireland you can no longer order free PCR tests to check if you have COVID-19."
+      }) }}
 
       <p class="govuk-body">
-        Read the docs on  <a href="https://design-system.service.gov.uk/patterns/start-using-a-service/" class="govuk-link" target="_blank">start pages</a>
+        Use this service to:
       </p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
+          check if you're eligible for a PCR test
         </li>
         <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+          order a PCR test to be sent to your home
         </li>
       </ul>
+
+      <p class="govuk-body">
+        You should not use this service if you’ve had a positive PCR test result in the last 90 days, unless you get any new COVID-19 symptoms. 
+      </p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "#",
+        isStartButton: true,
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-m">Getting a rapid lateral flow test</h2>
+
+      <p class="govuk-body">
+        If you’re not eligible for a PCR test, you might be able to <a href="#" class="govuk-link">get rapid lateral flow tests</a> instead. 
+      </p>
+
+      <p class="govuk-body">
+        Find out more about:
+      </p>
+
+      <ul class="govuk-list">
+        <li>
+          <a href="#" class="govuk-link">rapid lateral flow tests in England</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">rapid lateral flow tests in Scotland</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">rapid lateral flow tests in Wales</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">rapid lateral flow tests in Northern Ireland</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">If you need medical advice about your symptoms</h2>
+
+      <p class="govuk-body">
+        Get help at: 
+      </p>
+
+      <ul class="govuk-list">
+        <li>
+          <a href="#" class="govuk-link">England: NHS 111 online COVID-19 service</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Scotland: NHS inform</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Wales: NHS 111 Wales</a>
+        </li>
+        <li>
+          <a href="#" class="govuk-link">Northern Ireland: get advice from a GP or GP out-of-hours service</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">
+        Call 999 if you feel very unwell or think there's something seriously wrong.
+      </p>
+
+      
     </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/apply-coronavirus-test-care-home">
+                Get coronavirus tests for a care home
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    {# end column one third #}
   </div>
 
 {% endblock %}
