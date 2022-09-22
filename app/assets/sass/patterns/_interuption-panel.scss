@@ -9,10 +9,6 @@
 
     a.govuk-link{
         color:  govuk-colour("white");
-        &:hover{
-            color: govuk-colour("dark-blue");
-
-        }
     }
 
     .govuk-button{
