@@ -1,0 +1,75 @@
+{% set pageTitle = "Are you part of a priority group?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        Priority Groups
+    </h1>
+
+    <p class="govuk-body">
+        Priority groups help to make sure people who need tests the most get them first.
+    </p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        In England
+    </h2>
+    <p class="govuk-body">
+        <a href="https://www.gov.uk/guidance/essential-workers-prioritised-for-covid-19-testing" target="blank" class="govuk-link" rel="noreferrer noopener">Essential workers <span class="govuk-visually-hidden">(opens in new tab)</span></a> such as NHS and social care staff, teachers and transport staff are in a priority group.
+    </p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        In Scotland
+    </h2>
+    <p class="govuk-body">
+        <a href="https://www.gov.scot/publications/coronavirus-covid-19-getting-tested/pages/essential-worker-pcr-prioritisation/" target="blank" class="govuk-link">Essential workers <span class="govuk-visually-hidden">(opens in new tab)</span></a>, those on the <a href="https://www.mygov.scot/covid-highest-risk" target="blank" class="govuk-link">Highest Risk List <span class="govuk-visually-hidden">(opens in new tab)</span></a> or <a href="https://www.nhsinform.scot/covid19treatments" target="blank" class="govuk-link">eligible for new COVID-19 treatments <span class="govuk-visually-hidden">(opens in new tab)</span></a> are in a priority group.
+    </p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        In Wales
+    </h2>
+    <p class="govuk-body">
+        People who have been told they are <a href="https://gov.wales/covid-19-treatments" target="blank" class="govuk-link" rel="noreferrer noopener" target="blank">eligible for new Covid-19 treatments<span class="govuk-visually-hidden">(opens in new tab)</span></a> are in a priority group.
+    </p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">
+        In Northern Ireland
+    </h2>
+    <p class="govuk-body">
+        Essential workers, or those <a href="https://www.nidirect.gov.uk/articles/treatments-coronavirus-covid-19" target="blank" class="govuk-link" rel="noreferrer noopener" target="blank">eligible for new Covid-19 treatments<span class="govuk-visually-hidden">(opens in new tab)</span></a> are in a priority group.
+    </p>
+
+    <form action="" method="post" class="govuk-!-margin-top-8">
+        {{ govukRadios({
+            idPrefix: "priority-group",
+            name: "priority-group",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                },
+                {
+                    value: "do-not-know",
+                    text: "I do not know"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}
