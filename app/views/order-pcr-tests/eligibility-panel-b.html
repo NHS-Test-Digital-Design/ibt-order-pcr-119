@@ -1,0 +1,74 @@
+{% set pageTitle = "Most people in England are no longer eligible for PCR tests" %}
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "Beta"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:window.history.go(-1);"
+    }) }}
+{% endblock%}
+
+{% block content %}
+    <div class="govuk-panel govuk-panel--interuption">
+        <h1 class="govuk-panel__title">
+            {{ pageTitle }}
+        </h1>
+
+        <div class="govuk-panel__body">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <p>
+                        You can only get a PCR test if:
+                    </p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>
+                            Reason one.....
+                        </li>
+                        <li>
+                            Reason two.....
+                        </li>
+                        <li>
+                            Reason three.....
+                        </li>
+                    </ul>
+                    
+                    <h2 class="govuk-heading-m">
+                        If you're worried
+                    </h2>
+                    <p class="govuk-body">
+                        If you have COVID-19 symptoms which are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.
+                    </p>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end panel body -->
+    </div><!-- end panel -->
+
+    <hr class="govuk-section-break govuk-section-break--l">
+    <h2 class="govuk-heading-m">
+            Disclaimer
+    </h2>
+    
+    <p class="govuk-body">
+        By selecting 'Confirm and continue', I confirm I am eligible to get a PCR test.
+    </p>
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+            text: "Confirm and continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+        <a class="govuk-link" href="exit/not-eligible" draggable="false">
+            I am not eligible
+        </a>
+    </div>
+    
+
+{% endblock %}

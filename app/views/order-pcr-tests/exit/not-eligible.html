@@ -1,0 +1,63 @@
+{% set pageTitle = "You are not eligible for PCR tests  " %}
+{% extends "layout_service_step.html" %}
+
+{# *** ENGLAND - ENGLAND - ENGLAND *** #}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    {{ govukWarningText({
+        text: "Do not phone for a test. You will not be able to get one this way.",
+        iconFallbackText: "Warning"
+    }) }}
+
+    <p class="govuk-body">
+        You might be able to <a href="#" class="govuk-link">get rapid lateral flow tests</a> instead. 
+    </p>
+    
+    <p class="govuk-body">
+        Find out more about:
+    </p>
+
+    <ul class="govuk-list">
+        <li>
+            <a href="#" class="govuk-link">rapid lateral flow tests in England</a>
+        </li>
+        <li>
+            <a href="#" class="govuk-link">rapid lateral flow tests in Scotland</a>
+        </li>
+        <li>
+            <a href="#" class="govuk-link">rapid lateral flow tests in Wales</a>
+        </li>
+        <li>
+            <a href="#" class="govuk-link">rapid lateral flow tests in Northern Ireland</a>
+        </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">
+        If you're worried
+    </h2>
+
+    <p class="govuk-body">
+        Find out <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/how-to-avoid-catching-and-spreading-coronavirus-covid-19/" class="govuk-link"> how to avoid catching and spreading COVID-19</a>.
+    </p>
+
+    <p class="govuk-body">
+        You can also find <a href="https://www.nhs.uk/every-mind-matters/coronavirus/" class="govuk-link">advice and support if you're worried about COVID-19</a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+        If you have symptoms
+    </h2>
+    <p class="govuk-body">
+        Find out <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/symptoms/main-symptoms/" class="govuk-link"> what to do if you think you have COVID-19</a>.
+    </p>
+
+    <p class="govuk-body">
+        If you have symptoms and they get worse, contact 111 or speak to your GP. In an emergency dial 999. 
+    </p>
+{% endblock %}
+
+{# *** ENGLAND - ENGLAND - ENGLAND *** #}

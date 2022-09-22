@@ -38,7 +38,9 @@
         Essential workers, or those <a href="https://www.nidirect.gov.uk/articles/treatments-coronavirus-covid-19" target="blank" class="govuk-link" rel="noreferrer noopener" target="blank">eligible for new Covid-19 treatments<span class="govuk-visually-hidden">(opens in new tab)</span></a> are in a priority group.
     </p>
 
-    <form action="" method="post" class="govuk-!-margin-top-8">
+    <hr class="govuk-section-break govuk-section-break--l">
+
+    <form action="eligibility" method="post">
         {{ govukRadios({
             idPrefix: "priority-group",
             name: "priority-group",

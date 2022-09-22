@@ -1,0 +1,51 @@
+{% set pageTitle = "Most people in England are no longer eligible for PCR tests" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+        You can only get a PCR test if:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            Reason one.....
+        </li>
+        <li>
+            Reason two.....
+        </li>
+        <li>
+            Reason three.....
+        </li>
+    </ul>
+    
+    <h2 class="govuk-heading-m">
+        If you're worried
+    </h2>
+    <p class="govuk-body">
+        If you have COVID-19 symptoms which are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+    <h2 class="govuk-heading-m">
+            Disclaimer
+    </h2>
+    <p class="govuk-body">
+        By selecting 'Confirm and continue', I confirm I am eligible to get a PCR test.
+    </p>
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+            text: "Confirm and continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+        <a class="govuk-link" href="exit/not-eligible" draggable="false">
+            I am not eligible
+        </a>
+    </div>
+
+    
+
+{% endblock %}
