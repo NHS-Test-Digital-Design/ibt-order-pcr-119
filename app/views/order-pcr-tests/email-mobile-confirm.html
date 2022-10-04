@@ -1,0 +1,37 @@
+{% set pageTitle = "The first step in your service" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form class="form" action="priority-groups" method="post">
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "have-mobil-email",
+            name: "have-mobil-email",
+            fieldset: {
+                legend: {
+                    text: "Do you have both a mobile number and email address",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "You need both of these to get a coronavirus test online."
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+{% endblock %}

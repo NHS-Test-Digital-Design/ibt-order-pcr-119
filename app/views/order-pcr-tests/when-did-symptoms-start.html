@@ -1,0 +1,100 @@
+{% set pageTitle = "When did these symptoms start?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    {% set beforeDate %}
+        {{ govukDateInput({
+            id: "date-of-onset-manual",
+            namePrefix: "date-of-onset-manual",
+            fieldset: {
+                legend: {
+                    text: "Enter the date symptoms started",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                }
+            },
+            items: [
+                {
+                    name: "day",
+                    label: "Day",
+                    classes: "govuk-input--width-2"
+                },
+                {
+                    name: "month",
+                    label: "Month",
+                    classes: "govuk-input--width-2"
+                },
+                {
+                    name: "year",
+                    label: "Year",
+                    classes: "govuk-input--width-4"
+                }
+            ]
+        }) }}
+    {% endset %}
+
+    <form action="#" method="post">
+        
+        {{ govukRadios({
+            idPrefix: "date-of-onset",
+            name: "date-of-onset",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "If you cannot remember the exact date, select the date you think it was roughly. "
+            },
+            items: [
+                {
+                    value: "2022-03-17",
+                    text: "Thursday, 17 March 2022"
+                },
+                {
+                    value: "2022-03-16",
+                    text: "Wednesday, 16 March 2022"
+                },
+                {
+                    value: "2022-03-15",
+                    text: "Tuesday, 15 March 2022"
+                },
+                {
+                    value: "2022-03-14",
+                    text: "Monday, 14 March 2022"
+                },
+                {
+                    value: "2022-03-13",
+                    text: "Sunday, 13 March 2022"
+                },
+                {
+                    value: "2022-03-12",
+                    text: "Saturday, 12 March 2022"
+                },
+                {
+                    value: "2022-03-11",
+                    text: "Friday, 11 March 2022"
+                },
+                {
+                    value: "2022-03-10",
+                    text: "Thursday, 10 March 2022"
+                },
+                {
+                    value: "before-2022-03-10",
+                    text: "Before 10 March 2022",
+                    conditional: {
+                        html: beforeDate
+                    }
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+        
+    </form>
+{% endblock %}
