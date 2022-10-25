@@ -1,0 +1,101 @@
+{% set pageTitle = "What is your name?" %}
+{% extends "layout_service_step.html" %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "Beta"
+        },
+        html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock%}
+
+
+{% block content %}
+
+    {{ govukPanel({
+        titleText: "We have received your order for a PCR test kit",
+        classes: "govuk-!-margin-bottom-8 govuk-!-padding-8"
+    }) }}
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">
+        Your COVID-19 test kit should arrive in the next 2 days.
+    </p>
+
+    <p class="govuk-body">
+        The test kit contains a swab, instructions on how to use it and return packaging.
+    </p>
+
+    <p class="govuk-body">
+        You'll receive a confirmation email soon. There's important information in your confirmation email about how to complete your test. Follow the instructions carefully to make sure you receive your result.
+    </p>
+
+    {{ govukWarningText({
+        text: "You no longer need to register your test kit. It has already been registered for you.",
+        iconFallbackText: "Warning"
+    }) }}
+
+    <h2 class="govuk-heading-m">What to do when you receive your test kit</h2>
+
+    <p class="govuk-body">
+        Follow the instructions in your test kit. The instructions will tell you:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            how and when to do the swab test
+        </li>
+        <li>
+            how to return your sample
+        </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Instructions in Braille, audio or large print</h2>
+
+    <p class="govuk-body">
+        Royal National Institute of Blind People (RNIB) can send you Braille, audio or large print instructions.  <a href="https://www.rnib.org.uk/your-eyes/navigating-sight-loss/sight-loss-and-wellbeing/covid-19-test-kit-instructions-in-alternative-formats/download-covid-19-pcr-test-kit-instructions/" class="govuk-link">Order alternative format instructions online</a> or call 0303 123 9999 (Monday to Friday 8am to 8pm and Saturday 9am to 1pm).
+    </p>
+
+    <h2 class="govuk-heading-m">Getting help</h2>
+
+    <p class="govuk-body">
+        You can call 119 (free from mobiles and landlines) if you need extra support.
+    </p>
+
+    <p class="govuk-body">
+        Lines are open:
+    </p>
+
+    <ul class="govuk-list">
+        <li>
+            Monday to Friday (including bank holidays), 8am to 6pm
+        </li>
+        <li>
+            Saturday and Sunday, 9am to 1pm
+        </li>
+    </ul>
+
+    <p class="govuk-body">
+        <a href="https://signvideo.co.uk/" class="govuk-link">SignVideo</a> is a free online British Sign Language interpreter service for 119.
+    </p>
+
+    <h2 class="govuk-heading-m">
+        If you're worried
+    </h2>
+
+    <p class="govuk-body">
+        If your symptoms gets worse, or you do not get better after 7 days, use the <a href="https://111.nhs.uk/covid-19" class="govuk-link">NHS 111 online service</a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+        We want to hear from you    
+    </h2>
+
+    <p class="govuk-body">
+        <a href="https://signvideo.co.uk/" class="govuk-link">What did you think of our service?</a> (takes 3 minutes)
+    </p>
+
+
+{% endblock %}
