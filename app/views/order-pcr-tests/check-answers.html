@@ -1,0 +1,275 @@
+{% set pageTitle = "Check your answers" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    {# https://design-system.service.gov.uk/styles/typography/#headings #}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+
+    <h2 class="govuk-heading-m">
+        Personal details
+    </h2>
+    <p class="govuk-body">
+        Check that your personal details are correct. You can change them if they are not.
+    </p>
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+            {
+                key: {
+                    text: "Name"
+                },
+                value: {
+                    text: "Alex Kidd"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change name"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Date of birth"
+                },
+                value: {
+                    text: "6 December 2000"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change date of birth"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Contact details"
+                },
+                value: {
+                    html: "<p class='govuk-body'>your@email.com</p><p class='govuk-body'>07766 554321</p>"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change your contact details"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Country of residance"
+                },
+                value: {
+                    text: "England"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change your country of residance"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Home address"
+                },
+                value: {
+                    html: "<p class='govuk-body'>1 New Street, Your City, </p><p class='govuk-body'>NH48 1SD</p>"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change your home address"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "GP registered address"
+                },
+                value: {
+                    html: "<p class='govuk-body'>1 New Street, Your City, </p><p class='govuk-body'>NH48 1SD</p>"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change your delivery address"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Ethnicity"
+                },
+                value: {
+                    text: "white"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change ethnicity"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Medical record (male, female, other…) "
+                },
+                value: {
+                    text: "Male"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change medical record"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "NHS number"
+                },
+                value: {
+                    text: "123 456 7890"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change medical record"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+        Employment and education
+    </h2>
+    <p class="govuk-body">
+        If your test is positive, we may use this information for contact tracing.
+    </p>
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+            {
+                key: {
+                    text: "Travel to nursery, work or place of education"
+                },
+                value: {
+                    text: "No"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change travel to nursery, work or place of education"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+    
+    <h2 class="govuk-heading-m">
+        Vaccine and travel history
+    </h2>
+    <p class="govuk-body">
+        We may use this information to monitor new coronavirus variants.
+    </p>
+    {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [
+            {
+                key: {
+                    text: "Positive coronavirus test "
+                },
+                value: {
+                    text: "No"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change positive test history"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Coronavirus vaccine"
+                },
+                value: {
+                    text: "No"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change coronavirus vaccine"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Travelled overseas"
+                },
+                value: {
+                    text: "No"
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "#",
+                            text: "Change",
+                            visuallyHiddenText: "change overseas travel"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+
+    {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Save and continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+
+{% endblock %}

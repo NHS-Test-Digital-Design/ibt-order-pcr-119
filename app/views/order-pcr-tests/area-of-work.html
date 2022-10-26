@@ -1,0 +1,90 @@
+{% set pageTitle = " Select your area of work" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form class="form" action="/registering-for-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "area-of-work",
+            name: "area-of-work",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "This helps us understand how coronavirus is affecting people in different workplaces."
+            },
+            items: [
+                {
+                    value: "education",
+                    text: "Teaching and education"
+                },
+                {
+                    value: "health",
+                    text: "Health"
+                },
+                {
+                    value: "social-care ",
+                    text: "Social care"
+                },
+                {
+                    value: "transport",
+                    text: "Transport"
+                },
+                {
+                    value: "retail",
+                    text: "Retail"
+                },
+                {
+                    value: "hospitality",
+                    text: "Hospitality"
+                },
+                {
+                    value: "hair-beauty",
+                    text: "Hair and beauty professionals "
+                },
+                {
+                    value: "IT",
+                    text: "Information and communication"
+                },
+                {
+                    value: "finance",
+                    text: "Financial services and insurance "
+                },
+                {
+                    value: "manufacturing",
+                    text: "Manufacturing or construction"
+                },
+                {
+                    value: "gov",
+                    text: "Civil services or local government"
+                },
+                {
+                    value: "arts",
+                    text: "Arts, entertainment or recreation"
+                },
+                {
+                    value: "other",
+                    text: "Other"
+                },
+                {
+                    divider: "or"
+                },
+                {
+                    value: "not-to-say",
+                    text: "Prefer not to say / not applicable "
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+    </form>
+
+{% endblock %}

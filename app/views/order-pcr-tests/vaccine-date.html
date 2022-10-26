@@ -1,0 +1,57 @@
+{% set pageTitle = " Date of vaccine" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        We are asking this question to better understand how effective the vaccine is. 
+    </p>
+
+    <p class="govuk-body">
+        f you have only had 1 dose, tell us when you had this dose. 
+    </p>
+
+    <p class="govuk-body">
+        If you have had 2 or more doses, tell us when you had your most recent dose. This includes boosters.
+    </p>
+
+    <form class="form" action="/r#-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "vaccine",
+            name: "vaccine",
+            fieldset: {
+                legend: {
+                    text: "When did you have your most recent vaccine?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                    value: "less-than-seven",
+                    text: "Less than 7 days ago"
+                },
+                {
+                    value: "seven-fourteen",
+                    text: "7 to 14 days ago"
+                },
+                {
+                    value: "more-then-fourteen",
+                    text: "More than 14 days ago"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+        
+    </form>
+{% endblock %}

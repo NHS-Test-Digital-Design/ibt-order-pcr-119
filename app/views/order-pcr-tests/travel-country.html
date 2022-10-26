@@ -1,0 +1,26 @@
+{% set pageTitle = "Which country did you spend most time in? " %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form class="form" action="#" method="post">
+        {{ govukInput({
+            id: "country-most",
+            name: "country-most",
+            label: {
+                text: pageTitle,
+                classes: "govuk-label--l",
+                isPageHeading: true
+            },
+            hint: {
+                text: "Start entering a country below and then choose from the options provided."
+            }
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+    </form>
+{% endblock %}

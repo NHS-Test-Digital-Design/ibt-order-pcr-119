@@ -1,0 +1,53 @@
+{% set pageTitle = "Is this the address registered with your GP?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    <form action="/-answer" class="form" method="post">
+
+        {% set titles %}
+            <h1 class="govuk-heading-l">
+                {{ pageTitle }}
+            </h1>
+            <h2 class="govuk-heading-m">
+                {{  data['#'] or '1 New Street, Your City, NH1 1SD' }}
+            </h2>
+        {% endset %}
+
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "confirmGpAddress",
+            name: "confirmGpAddress",
+            fieldset: {
+                legend: {
+                    html: titles
+                }
+            },
+            hint: {
+                html: "<p class='govuk-body'>This will help us find and update your GP record with your test result.</p> <p class='govuk-body govuk-!-font-weight-bold'>If you're not registered with a GP in the UK, select 'I do not know'</p>"
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                },
+                {
+                    value: "do-not-know",
+                    text: "I do not know"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+
+
+{% endblock %}

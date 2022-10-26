@@ -1,0 +1,59 @@
+{% set pageTitle = "What is the address registered with your GP?" %}
+{% extends "layout_service_step.html" %}
+
+
+{% block content %}
+
+    {# https://design-system.service.gov.uk/styles/typography/#headings #}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        This will help us find and update your GP record with your test result.
+    </p>
+
+    <form action="select-addess" class="form" method="post">
+        {# https://design-system.service.gov.uk/components/text-input/ #}
+        {{ govukInput({
+            id: "gpAddressLine1",
+            name: "gpAddressLine1",
+            autocomplete: "address-line1",
+            label: {
+                text: "Buiding and street"
+            }
+        }) }}
+        {{ govukInput({
+            id: "gpAddressLine2",
+            name: "gpAddressLine2",
+            autocomplete: "address-line2",
+            label: {
+                text: "Building and street line 2 of 2",
+                classes: "govuk-visually-hidden"
+            }
+        }) }}
+        {{ govukInput({
+            id: "gpAddressTown",
+            name: "gpAddressTown",
+            classes: "govuk-input--width-10",
+            label: {
+                text: "Town or city"
+            }
+        }) }}
+        {{ govukInput({
+            id: "gpAddressPostcode",
+            name: "gpAddressPostcode",
+            classes: "govuk-input--width-10",
+            label: {
+                text: "Postcode"
+            }
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+
+{% endblock %}

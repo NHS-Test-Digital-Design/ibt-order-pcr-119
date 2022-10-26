@@ -1,0 +1,54 @@
+{% set pageTitle = "Do you travel to nursery, work or a place of education?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    <form class="form" action="/travel-work-education-answer" method="post">
+
+        {{ govukRadios({
+            idPrefix: "travel-work-education",
+            name: "travel-work-education",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "This will help us understand more about the spread of the virus. "
+            },
+            items: [
+                {
+                    value: "yes-work",
+                    text: "Yes - I travel to a workplace"
+                },
+                {
+                    value: "yes-education",
+                    text: "Yes - I go to nursery, school, college or university "
+                },
+                {
+                    value: "no",
+                    text: "No"
+                },
+                {
+                    divider: "or"
+                },
+                {
+                    value: "not-to-say",
+                    text: "Prefer not to say / not applicable"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+
+
+    </form>
+
+{% endblock %}

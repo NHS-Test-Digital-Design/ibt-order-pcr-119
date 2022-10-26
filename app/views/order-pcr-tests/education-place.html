@@ -1,0 +1,59 @@
+{% set pageTitle = " Which place do you attend?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    <form class="form" action="/registering-for-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "education-place",
+            name: "education-place",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            items: [
+                {
+                    value: "nursery",
+                    text: "Nursery"
+                },
+                {
+                    value: "primary-school",
+                    text: "Primary School"
+                },
+                {
+                    value: "secondary-school",
+                    text: "Secondary School"
+                },
+                {
+                    value: "collage",
+                    text: "Collage"
+                },
+                {
+                    value: "university",
+                    text: "University"
+                },
+                {
+                    value: "other",
+                    text: "Other"
+                },
+                {
+                    divider: "or"
+                },
+                {
+                    value: "not-say",
+                    text: "Prefer not to say"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+        }) }}
+    </form>
+
+{% endblock %}

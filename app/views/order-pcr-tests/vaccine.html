@@ -1,0 +1,44 @@
+{% set pageTitle = "Have you had a coronavirus vaccine?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form class="form" action="/r#-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "vaccine",
+            name: "vaccine",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "We are asking this question to better understand how effective the vaccine is."
+            },
+            items: [
+                {
+                    value: "yes-one-dose",
+                    text: "Yes, 1 dose "
+                },
+                {
+                    value: "yes-two-doses",
+                    text: "Yes, 2 or more doses "
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+        
+    </form>
+
+{% endblock %}

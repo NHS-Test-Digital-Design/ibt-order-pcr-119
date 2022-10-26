@@ -1,0 +1,156 @@
+{% set pageTitle = "Order PCR test kits Prototype" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+    {{ pageTitle }}
+</h1>
+
+
+
+<h2 class="govuk-heading-m">
+    Useful links
+</h2>
+<ul class="govuk-list govuk-list--bullet">
+    <li>
+        <a href="https://github.com/NHS-Test-Digital-Design/ibt-order-pcr" class="govuk-link">Github repo</a>
+    </li>
+    <li>
+        <a href="https://miro.com/app/board/uXjVOy2uSFI=/?share_link_id=403210364508" class="govuk-link">Miro design board</a>
+    </li>
+</ul>
+
+
+
+<h2 class="govuk-heading-m">
+    User flow screens
+</h2>
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>
+        <a href="/" class="govuk-link">Start page</a>
+    </li>
+    <li>
+        <a href="../country" class="govuk-link">Country select</a>
+    </li>
+    <li>
+        <a href="../email-mobile-confirm" class="govuk-link">Confirm user has email and mobile</a>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../call-us" class="govuk-link">Call 119 for tests - EXIT</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="../condition" class="govuk-link">COVID-19 symptoms</a> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../when-did-symptoms-start" class="govuk-link">When did symptoms start?</a>
+            </li>
+        </ul>
+    </li>  
+
+    <li>
+        <a href="../eligibility" class="govuk-link">Eligibility gate screen - standard layout</a> 
+    </li>
+    <li>
+        <a href="../eligibility-panel" class="govuk-link">Eligibility gate screen - panel layout</a> 
+    </li>
+    <li>
+        <a href="../priority-groups" class="govuk-link">Priority groups</a> 
+    </li>
+    <li>
+        <a href="../name" class="govuk-link">Name</a> 
+    </li> 
+    <li>
+        <a href="../age" class="govuk-link">Date of birth / age</a> 
+    </li> 
+    <li>
+        <a href="../mobile-number" class="govuk-link">Mobile number **content needed**</a> 
+    </li> 
+    <li>
+        <a href="../email" class="govuk-link">Email address **content needed**</a> 
+    </li> 
+    <li>
+        <a href="../gender" class="govuk-link">Gender</a> 
+    </li> 
+    <li>
+        <a href="../ethnicity/ethnic-group" class="govuk-link">Ethnic group</a> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../ethnicity/ethnic-background" class="govuk-link">Ethnic background</a>
+            </li>
+        </ul>
+    </li> 
+    <li>
+        <a href="../travel-work-education" class="govuk-link">Travel to nursery, work or place of education</a> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../area-of-work" class="govuk-link">Area of work</a>
+            </li>
+            <li>
+                <a href="../work-details" class="govuk-link">Work details</a>
+            </li>
+            <li>
+                <a href="../education-place" class="govuk-link">Place of education</a>
+            </li>
+            <li>
+                <a href="../education-place-details" class="govuk-link">Place of education details</a>
+            </li>
+        </ul>
+    </li> 
+    <li>
+        <a href="../travel-overseas" class="govuk-link">Travel overseas</a>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../travel-country" class="govuk-link">Travel country</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="../tested-positive-before" class="govuk-link">Previously tested positive</a> 
+    </li> 
+    <li>
+        <a href="../vaccine" class="govuk-link">Had a vaccine?</a>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../vaccine-date" class="govuk-link">Vaccine date</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="../address/home-address-postcode" class="govuk-link">Home address postcode entry</a>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../address/home-address-select" class="govuk-link">Home address select</a>
+            </li>
+            <li>
+                <a href="../address/home-address-manual" class="govuk-link">Home address manual entry</a>
+            </li>
+        </ul>
+    </li> 
+    <li>
+        <a href="../address/gp-address" class="govuk-link">GP address</a> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li>
+                <a href="../address/gp-address-postcode" class="govuk-link">GP address postcode</a>
+            </li>
+            <li>
+                <a href="../address/gp-address-manual" class="govuk-link">GP address manual entry</a>
+            </li>
+        </ul>
+    </li> 
+    <li>
+        <a href="../nhs-number" class="govuk-link">NHS number</a>
+    </li>
+    <li>
+        <a href="../check-answers" class="govuk-link">Check answers</a>
+    </li>
+    
+
+
+
+</ul>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% set pageTitle = "Enter your work details " %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        This helps us understand which occupations are more at risk from coronavirus. 
+    </p>
+    <p class="govuk-body">
+        We may contact your employer to help us with contact tracing. 
+    </p>
+    <p class="govuk-body">
+        Start entering an occupation below and select from the options given. 
+    </p>
+    <p class="govuk-body">
+        If you cannot see your occupation, try a different word. 
+    </p>
+    <p class="govuk-body">
+        If you still cannot see your occupation, enter 'I cannot find the correct occupation'. 
+    </p>
+    <p class="govuk-body">
+        You do not have to share these details if you do not want to. 
+    </p>
+
+    <form class="form" action="#" method="post">
+        {{ govukInput({
+            id: "occupation",
+            name: "occupation",
+            classes: "govuk-!-width-three-quarters",
+            label: {
+                text: "Occupation (optional)"
+            }
+        }) }}
+        
+        {{ govukInput({
+            id: "employer",
+            name: "employer",
+            classes: "govuk-!-width-three-quarters",
+            label: {
+                text: "Employer (optional)"
+            }
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "#"
+        }) }}
+
+        <p class="govuk-body">
+            <a href="#" class="govuk-link">Prefer not to say</a>
+        </p>
+
+    </form>
+
+{% endblock %}

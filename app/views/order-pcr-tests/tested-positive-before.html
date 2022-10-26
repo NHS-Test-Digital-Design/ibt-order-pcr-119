@@ -1,0 +1,43 @@
+{% set pageTitle = "Have you tested positive before?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form class="form" action="/#-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "tested-positive",
+            name: "tested-positive",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "We need to know if you received a positive result more than 3 months ago. This tells us you may have a second coronavirus infection caused by a different strain of the virus. "
+            },
+            items: [
+                {
+                    value: "yes-over-three-months",
+                    text: "Yes, over 3 months ago "
+                },
+                {
+                    value: "yes-less-three-months",
+                    text: "Yes, less than 3 months ago "
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+        
+    </form>
+
+{% endblock %}

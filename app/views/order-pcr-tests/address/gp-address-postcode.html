@@ -1,0 +1,44 @@
+{% set pageTitle = "What is the address registered with your GP?" %}
+{% extends "layout_service_step.html" %}
+
+
+{% block content %}
+
+    {# https://design-system.service.gov.uk/styles/typography/#headings #}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        This will help us find and update your GP record with your test result.
+    </p>
+
+    <p class="govuk-body">
+        If you're not registered with a GP in the UK, use the address where you're staying. 
+    </p>
+
+    <form action="home-address-select" class="form" method="post">
+        {# https://design-system.service.gov.uk/components/text-input/ #}
+        {{ govukInput({
+            id: "gpPostcode",
+            name: "gpPostcode",
+            classes: "govuk-input--width-10",
+            autocomplete: "postal-code",
+            label: {
+                text: "Postcode",
+                isPageHeading: false
+            }
+        }) }}
+
+        <p class="govuk-body">
+            <a href="home-address-manual" class="govuk-link">Enter address manually</a>
+        </p>
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+
+{% endblock %}

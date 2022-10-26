@@ -1,0 +1,40 @@
+{% set pageTitle = "Did you travel to any countries outside the UK and Ireland within the last 14 days? " %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <form class="form" action="/travel-answer" method="post">
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "travel",
+            name: "travel",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "This will help us test the vaccine against variants of coronavirus from different countries."
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes, I travelled overseas"
+                },
+                {
+                    value: "no",
+                    text: "No, I did not travel overseas"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}
