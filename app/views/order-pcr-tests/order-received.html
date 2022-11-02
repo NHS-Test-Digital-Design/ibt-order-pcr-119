@@ -1,4 +1,4 @@
-{% set pageTitle = "What is your name?" %}
+{% set pageTitle = "We have received your order for a PCR test kit" %}
 {% extends "layout_service_step.html" %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@
 {% block content %}
 
     {{ govukPanel({
-        titleText: "We have received your order for a PCR test kit",
+        titleText: pageTitle,
         classes: "govuk-!-margin-bottom-8 govuk-!-padding-8"
     }) }}
 

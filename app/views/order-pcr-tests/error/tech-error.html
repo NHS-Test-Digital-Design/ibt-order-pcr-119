@@ -1,0 +1,19 @@
+{% set pageTitle = "Sorry, there is a technical problem" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        We could not process your answers. Your details are saved, please try again.
+    </p>
+
+    {# https://design-system.service.gov.uk/components/button/ #}
+    {{ govukButton({
+        text: "Try again",
+        classes: "govuk-!-margin-top-4"
+    }) }}
+        
+{% endblock %}

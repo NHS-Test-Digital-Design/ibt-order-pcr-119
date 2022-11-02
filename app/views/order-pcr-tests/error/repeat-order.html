@@ -1,0 +1,28 @@
+{% set pageTitle = "You have ordered a test within the last 24 hours" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        You can only place one order in a 24 hour period, for each person. You need to wait before you can order again.
+    </p>
+    <p class="govuk-body">
+        If you need help, call 119 (free from mobiles and landlines).
+    </p>
+    <p class="govuk-body">
+        Lines are open:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            Monday to Friday (including  <a href="https://www.gov.uk/bank-holidays" class="govuk-link">bank holidays</a>), 8am to 6pm
+        </li>
+        <li>
+            Saturday and Sunday, 9am to 1pm
+        </li>
+    </ul>
+
+{% endblock %}
