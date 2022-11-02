@@ -1,0 +1,101 @@
+{% set pageTitle = "What is your delivery address?" %}
+{% extends "layout_service_step.html" %}
+
+
+{% set code %}
+    {% if data['delPostcodeNew']%}
+        {{ data['delPostcodeNew'] }}
+        {% elif data['delPostcode']%}
+        {{ data['delPostcode'] }}
+        {% else %}
+        NH48 1SD
+    {% endif %}
+{% endset%}
+
+
+{% set code = data['delPostcode'] or 'NH48 1SD' %}
+
+
+
+{% block content %}
+
+    <h1 class="govuk-heading-l  govuk-!-margin-bottom-8">
+        {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+        This is the address where your test kit will be sent. 
+    </p>
+
+    {# https://design-system.service.gov.uk/components/summary-list/ #}
+    {{ govukSummaryList({
+        rows: [
+            {
+                key: {
+                    text: "Postcode"
+                },
+                value: {
+                    text:  code
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "../country-postcode-change",
+                            text: "Change",
+                            visuallyHiddenText: "Postcode"
+                        }
+                    ]
+                }
+            }
+        ]
+    }) }}
+
+    <form action="confirm-home-address" class="form" method="post">
+        
+        {# https://design-system.service.gov.uk/components/select/ #}
+        {{ govukSelect({
+            id: "selectDelAddress",
+            name: "selectDelAddress",
+            label: {
+                text: "Select an address"
+            },
+            items: [
+                {
+                    value: "found",
+                    text: "5 addresses found"
+                },
+                {
+                    value: "1 New Street, Your City, " + code,
+                    text: "1 New Street, Your City, " + code
+                },
+                {
+                    value: "2 New Street, Your City, " + code,
+                    text: "2 New Street, Your City, " + code
+                },
+                {
+                    value: "3 New Street, Your City, " + code,
+                    text: "3 New Street, Your City, " + code
+                },
+                {
+                    value: "4 New Street, Your City, " + code,
+                    text: "4 New Street, Your City, " + code
+                },
+                {
+                    value: "5 New Street, Your City, " + code,
+                    text: "5 New Street, Your City, " + code
+                }
+            ]
+        }) }}
+
+        <p class="govuk-body">
+            <a href="delivery-address-manual" class="govuk-link">I cannot find the address on the list</a>
+        </p>
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}

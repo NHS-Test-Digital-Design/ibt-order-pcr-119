@@ -1,0 +1,49 @@
+{% set pageTitle = "Is this the delivery address?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    <form action="/-answer" class="form" method="post">
+
+        {% set titles %}
+            <h1 class="govuk-heading-l">
+                {{ pageTitle }}
+            </h1>
+            <h2 class="govuk-heading-m">
+                {{  data['#'] or '1 New Street, Your City, NH1 1SD' }}
+            </h2>
+        {% endset %}
+
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "confirmDeliveryAddress",
+            name: "confirmDeliveryAddress",
+            fieldset: {
+                legend: {
+                    html: titles
+                }
+            },
+            hint: {
+                text: "The delivery address is where the test kit will be sent."
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+
+
+{% endblock %}

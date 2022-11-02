@@ -1,0 +1,38 @@
+{% set pageTitle = "What is your delivery address?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+
+    {# https://design-system.service.gov.uk/styles/typography/#headings #}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+        This is the address in  where your test kit will be sent. 
+    </p>
+
+    <form action="delivery-address-select" class="form" method="post">
+        {# https://design-system.service.gov.uk/components/text-input/ #}
+        {{ govukInput({
+            id: "deliveryPostcode",
+            name: "deliveryPostcode",
+            classes: "govuk-input--width-10",
+            autocomplete: "postal-code",
+            label: {
+                text: "Postcode",
+                isPageHeading: false
+            }
+        }) }}
+
+        <p class="govuk-body">
+            <a href="delivery-address-manual" class="govuk-link">Enter address manually</a>
+        </p>
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+
+{% endblock %}
