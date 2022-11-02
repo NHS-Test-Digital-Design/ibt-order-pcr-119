@@ -1,0 +1,40 @@
+{% set pageTitle = "Check your email address" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        We'll send a confirmation code to this email address. You'll need to enter this code to continue.
+    </p>
+    <p class="govuk-body">
+        Check that you're happy for us to use this email address, or you can change it.
+    </p>
+    <p class="govuk-body">
+        If you're an essential worker and you have a work email address that you can access, it would help us if you used this. Change it to your work email, if you need to. If you do not have a work email address, a personal one is fine.
+    </p>
+
+    <form class="form" action="/email-confirm-answer" method="post">
+        {{ govukInput({
+            id: "emailConfirmed",
+            name: "emailConfirmed",
+            classes: "govuk-!-width-one-half",
+            label: {
+                text: "Email address"
+            },
+            type: "email",
+            autocomplete: "email",
+            spellcheck: false,
+            value: "your@email.com"
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+
+{% endblock %}

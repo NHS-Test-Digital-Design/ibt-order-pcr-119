@@ -1,0 +1,34 @@
+{% set pageTitle = "Enter your email confirmation code" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        We sent a confirmation code to <strong>your@email.com</strong>
+    </p>
+    <p class="govuk-body">
+        Enter the code that we emailed you.
+    </p>
+    
+    <form class="form" action="/email-confirm-answer" method="post">
+        {{ govukInput({
+            id: "confirm-code",
+            name: "confirm-code",
+            classes: "govuk-input--width-10",
+            label: {
+                text: "Confirmation code",
+                classes: "govuk-!-margin-top-8"
+            }
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Confirm and continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+
+{% endblock %}
