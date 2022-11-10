@@ -132,7 +132,7 @@
 {% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form action="link-or-routing-url-here" class="form" method="post">
+    <form action="../travel-work-education" class="form" method="post">
         {# https://design-system.service.gov.uk/components/radios/ #}
         {{ govukRadios({
             idPrefix: "ethnic-background",
@@ -153,8 +153,7 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4",
-            href: "confirmation"
+            classes: "govuk-!-margin-top-4"
         }) }}
     </form>
 {% endblock %}

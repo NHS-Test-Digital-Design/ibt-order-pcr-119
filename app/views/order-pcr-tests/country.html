@@ -2,11 +2,11 @@
 {% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form class="form" action="priority-groups" method="post">
+    <form class="form" action="condition" method="post">
         {{ govukRadios({
             idPrefix: "where-do-you-live",
             name: "where-do-you-live",
-            fieldset: {
+            fieldset: { 
                 legend: {
                     text:  pageTitle,
                     isPageHeading: true,

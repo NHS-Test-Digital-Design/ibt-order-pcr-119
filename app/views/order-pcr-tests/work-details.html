@@ -25,7 +25,7 @@
         You do not have to share these details if you do not want to. 
     </p>
 
-    <form class="form" action="#" method="post">
+    <form class="form" action="address/home-address-postcode" method="post">
         {{ govukInput({
             id: "occupation",
             name: "occupation",
@@ -47,12 +47,11 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4",
-            href: "#"
+            classes: "govuk-!-margin-top-4"
         }) }}
 
         <p class="govuk-body">
-            <a href="#" class="govuk-link">Prefer not to say</a>
+            <a href="address/home-address-postcode" class="govuk-link">Prefer not to say</a>
         </p>
 
     </form>

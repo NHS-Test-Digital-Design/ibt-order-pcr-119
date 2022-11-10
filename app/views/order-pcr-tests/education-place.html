@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <form class="form" action="/registering-for-answer" method="post">
+    <form class="form" action="education-place-details" method="post">
         {{ govukRadios({
             idPrefix: "education-place",
             name: "education-place",
@@ -52,7 +52,7 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4",
+            classes: "govuk-!-margin-top-4"
         }) }}
     </form>
 

@@ -1,0 +1,72 @@
+{% set pageTitle = "Do you have a mobile number where you can get the test results?" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        If you're getting a test for a child, you (their parent or guardian) should enter your number. If you're getting a test for someone aged 16 or older, make sure they're happy for their test results to go to this number.
+    </p>
+
+    <form class="form" action="/mobile-answer" method="post">
+
+        {% set mobileInput %}
+            <p class="govuk-body">
+                Make sure you're happy for your test results to go to this mobile number
+            </p>
+            {{ govukInput({
+                id: "mobile",
+                name: "mobile",
+                classes: "govuk-!-width-one-half",
+                type: "tel",
+                autocomplete: "tel",
+                spellcheck: false,
+                label: {
+                    text: "Mobile number"
+                }             
+            }) }}
+            {{ govukInput({
+                id: "confirmMobile",
+                name: "confirmMmobile",
+                classes: "govuk-!-width-one-half",
+                type: "tel",
+                autocomplete: "tel",
+                spellcheck: false,
+                label: {
+                    text: "Confirm mobile number"
+                }
+            }) }}
+            
+        {% endset %}
+
+        {{ govukRadios({
+            idPrefix: "hasMobile",
+            name: "hasMobile",
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes, I have a mobile number where I can get the results",
+                    conditional: {
+                        html: mobileInput
+                    }
+                },
+                {
+                    value: "no",
+                    text: "No, I do not have a mobile number"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+
+{% endblock %}
+

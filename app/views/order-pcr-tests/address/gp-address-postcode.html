@@ -17,7 +17,7 @@
         If you're not registered with a GP in the UK, use the address where you're staying. 
     </p>
 
-    <form action="home-address-select" class="form" method="post">
+    <form action="gp-address-select" class="form" method="post">
         {# https://design-system.service.gov.uk/components/text-input/ #}
         {{ govukInput({
             id: "gpPostcode",
@@ -31,7 +31,7 @@
         }) }}
 
         <p class="govuk-body">
-            <a href="home-address-manual" class="govuk-link">Enter address manually</a>
+            <a href="gp-address-manual" class="govuk-link">Enter address manually</a>
         </p>
 
         {# https://design-system.service.gov.uk/components/button/ #}

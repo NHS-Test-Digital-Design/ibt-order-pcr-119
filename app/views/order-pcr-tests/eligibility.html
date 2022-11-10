@@ -1,4 +1,4 @@
-{% set pageTitle = "Most people in England are no longer eligible for PCR tests" %}
+{% set pageTitle = "Check if you are eligible for a PCR test" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
@@ -39,7 +39,8 @@
     <div class="govuk-button-group">
         {{ govukButton({
             text: "Confirm and continue",
-            classes: "govuk-!-margin-top-4"
+            classes: "govuk-!-margin-top-4",
+            href: "priority-groups"
         }) }}
         <a class="govuk-link" href="exit/not-eligible" draggable="false">
             I am not eligible

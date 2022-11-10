@@ -11,7 +11,7 @@
         This will help us learn about the type of places where the virus spreads. It will also help contact tracers.
     </p>
 
-    <form class="form" action="/registering-for-answer" method="post">
+    <form class="form" action="address/home-address-postcode" method="post">
         {{ govukInput({
             id: "education-name",
             name: "education-name",
@@ -32,13 +32,12 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4",
-            href: "#"
+            classes: "govuk-!-margin-top-4"
         }) }}
     </form>
 
     <p class="govuk-body">
-        <a href="#" class="govuk-link">Prefer not to say</a>
+        <a href="address/home-address-postcode" class="govuk-link">Prefer not to say</a>
     </p>    
 
 {% endblock %}

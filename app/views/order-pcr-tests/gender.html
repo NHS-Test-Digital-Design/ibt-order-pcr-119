@@ -2,7 +2,7 @@
 {% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form action="/email-answer" class="form" method="post">
+    <form action="ethnicity/ethnic-group" class="form" method="post">
         {{ govukRadios({
             idPrefix: "gender",
             name: "gender",
@@ -38,7 +38,8 @@
         }) }}
 
         {{ govukButton({
-            text: "Continue"
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
         }) }}
     </form>
 {% endblock %}
