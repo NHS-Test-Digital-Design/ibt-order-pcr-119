@@ -1,0 +1,50 @@
+{% set pageTitle = "You can no longer get a free PCR test" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        This service has now ended in England, Scotland and Wales.
+    </p>
+
+    {{ govukWarningText({
+        text: "Do not call 119, as you will not be able to get a test this way. You cannot order tests from NHS 111 or 999.",
+        iconFallbackText: "Warning"
+    }) }}
+
+    <h2 class="govuk-heading-m">
+        If you're in England
+    </h2>
+
+    <p class="govuk-body">
+        <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/symptoms/main-symptoms/" class="govuk-link">Find out what to do if you have symptoms in England</a>
+    </p>
+
+    <h2 class="govuk-heading-m">
+        If you're in Scotland
+    </h2>
+
+    <ul class="govuk-list">
+        <li>
+            <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19/" class="govuk-link">Find out what to do if you have symptoms in Scotland</a>
+        </li>
+        <li>
+            <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19-treatments" class="govuk-link">Find out what to do if you are eligible for COVID-19 treatments</a>
+        </li>
+        <li>
+            <a href="https://www.mygov.scot/self-isolation-grant/check-if-you-qualify-and-how-to-apply" class="govuk-link">Find out what to do if you are eligible for the self-isolation support grant</a>
+        </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">
+        If you're in Wales
+    </h2>
+
+    <p class="govuk-body">
+        <a href="https://gov.wales/get-tested-coronavirus-covid-19" class="govuk-link">Find out what to do if you have symptoms in Wales</a>
+    </p>
+{% endblock %}
+
