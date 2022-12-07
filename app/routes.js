@@ -7,9 +7,9 @@ const router = express.Router()
 router.post('/symptoms-answer', function (req, res) {
     var symptoms = req.session.data['do-you-have-symptoms']
     if (symptoms == "yes") {
-        res.redirect('order-pcr-tests/when-did-symptoms-start')
+        res.redirect('order-pcr-tests-119/when-did-symptoms-start')
     } else {
-        res.redirect('order-pcr-tests/eligibility')
+        res.redirect('order-pcr-tests-119/eligibility')
     }
 })
 
@@ -17,9 +17,9 @@ router.post('/symptoms-answer', function (req, res) {
 router.post('/mobile-answer', function (req, res) {
     var mobile = req.session.data['hasMobile']
     if (mobile == "no") {
-        res.redirect('order-pcr-tests/call-us')
+        res.redirect('order-pcr-tests-119/call-us')
     } else {
-        res.redirect('order-pcr-tests/email-confirm')
+        res.redirect('order-pcr-tests-119/email-confirm')
     }
 })
 
@@ -27,9 +27,9 @@ router.post('/mobile-answer', function (req, res) {
 router.post('/email-answer', function (req, res) {
     var email = req.session.data['hasEmail']
     if (email == "no") {
-        res.redirect('order-pcr-tests/call-us')
+        res.redirect('order-pcr-tests-119/call-us')
     } else {
-        res.redirect('order-pcr-tests/gender')
+        res.redirect('order-pcr-tests-119/gender')
     }
 })
 
@@ -37,15 +37,15 @@ router.post('/email-answer', function (req, res) {
 router.post('/travel-work-education-answer', function (req, res) {
     var travelWorkEdu = req.session.data['travel-work-education']
     if (travelWorkEdu == "yes-work") {
-        res.redirect('order-pcr-tests/area-of-work')
+        res.redirect('order-pcr-tests-119/area-of-work')
     } else if (travelWorkEdu == "yes-education"){
-        res.redirect('order-pcr-tests/education-place')
+        res.redirect('order-pcr-tests-119/education-place')
     } else if (travelWorkEdu == "no"){
-        res.redirect('order-pcr-tests/address/home-address-postcode')
+        res.redirect('order-pcr-tests-119/address/home-address-postcode')
     } else if (travelWorkEdu == "not-to-say"){
-        res.redirect('order-pcr-tests/address/home-address-postcode')
+        res.redirect('order-pcr-tests-119/address/home-address-postcode')
     } else {
-        res.redirect('order-pcr-tests/area-of-work')
+        res.redirect('order-pcr-tests-119/area-of-work')
     }
 })
 
@@ -53,11 +53,11 @@ router.post('/travel-work-education-answer', function (req, res) {
 router.post('/gp-address-answer', function (req, res) {
     var gpaddress = req.session.data['confirmGpAddress']
     if (gpaddress == "yes") {
-        res.redirect('order-pcr-tests/nhs-number')
+        res.redirect('order-pcr-tests-119/nhs-number')
     } else if (gpaddress == "no"){
-        res.redirect('order-pcr-tests/address/gp-address-postcode')
+        res.redirect('order-pcr-tests-119/address/gp-address-postcode')
     } else {
-        res.redirect('order-pcr-tests/nhs-number')
+        res.redirect('order-pcr-tests-119/nhs-number')
     }
 })
 
