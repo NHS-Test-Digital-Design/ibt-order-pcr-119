@@ -1,0 +1,108 @@
+{% set pageTitle = "Coronavirus tests" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+
+    <h2 class="govuk-heading-m">
+        PCR Tests
+    </h2>
+
+    <p class="govuk-body">
+        Most sensitive type of test. It must be processed at a lab.
+    </p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Get a PCR test kit
+    </h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            The person has not given sample yet
+        </li>
+        <li>
+            Test kit is delivered to the person's home and returned to a lab by post
+        </li>
+        <li>
+            The sample must be processed at a lab
+        </li>
+        <li>
+            Test results are usually available within 72 hours. It could take longer than this, but 119 are only able to investigate after 5 days.
+        </li>
+    </ul>
+
+    {{ govukButton({
+        text: "Get PCR a test kit",
+        classes: "govuk-!-margin-bottom-7",
+        href: "#"
+    }) }}
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Register a PCR test kit
+    </h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            The sample has already been taken
+        </li>
+        <li>
+            The sample is at the lab for processing and the person needs their result
+        </li>
+    </ul>
+
+    {{ govukButton({
+        text: "Register a PCR test kit",
+        classes: "govuk-!-margin-bottom-3",
+        href: "#"
+    }) }}
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">
+        Rapid lateral flow tests
+    </h2>
+
+    <p class="govuk-body">
+        Lower sensitivity with faster results.
+    </p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Get a rapid lateral flow test kit
+    </h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            Test kits are delivered to a person's home
+        </li>
+        <li>
+            The test kit stays with the person and they see the result of the sample themselves
+        </li>
+        <li>
+            It takes approximately 15-30 minutes to get a result
+        </li>
+    </ul>
+
+    {{ govukButton({
+        text: "Get a rapid lateral flow test kit",
+        classes: "govuk-!-margin-bottom-7",
+        href: "#"
+    }) }}
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Report a rapid lateral flow test result 
+    </h3>
+
+    <p class="govuk-body">
+        Test kits are delivered to a person's home
+    </p>   
+
+    {{ govukButton({
+        text: "Report a rapid lateral flow test result",
+        classes: "govuk-!-margin-bottom-9",
+        href: "#"
+    }) }}
+
+{% endblock %}
