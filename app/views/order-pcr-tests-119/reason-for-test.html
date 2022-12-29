@@ -1,0 +1,133 @@
+{% set pageTitle = "Why are you asking for a test?" %}
+{% extends "layout_service_step.html" %}
+
+
+{% block content %}
+    {# conditional radios #}
+    {% set contactConditional %}
+        {{ govukRadios({
+            idPrefix: "contacts",
+            name: "contacts",
+            items: [
+                {
+                    value: "tracers",
+                    text: "Contact tracers told me to get a test"
+                },
+                {
+                    value: "app",
+                    text: "The contact tracing app told me to get a test (the NHS COVID-19, Protect Scotland or StopCOVID NI app)"
+                },
+                {
+                    value: "other",
+                    text: "I found out in another way that I’m a contact (England, Wales and Scotland only)"
+                }
+            ]
+        }) }}
+    {% endset %}
+
+    {% set toldWorkConditional %}
+        {{ govukRadios({
+            idPrefix: "toldWorkDetail",
+            name: "toldWorkDetail",
+            items: [
+                {
+                    value: "work",
+                    text: "I'm in Scotland or Wales and I work in health or social care, education or in an emergency or prison service"
+                },
+                {
+                    value: "uniWales",
+                    text: "I'm a student returning to university in Wales"
+                },
+                {
+                    value: "uniScotland",
+                    text: "I'm a student returning to university in Scotland"
+                },
+                {
+                    value: "ntrg",
+                    text: "I'm part of the National Tactical Response Group (NTRG)"
+                }
+            ]
+        }) }}
+    {% endset %}
+
+    {% set toldHealthConditional %}
+        {{ govukRadios({
+            idPrefix: "toldHealthDetail",
+            name: "toldHealthDetail",
+            items: [
+                {
+                    value: "council",
+                    text: "My local council or health protection team has asked me to get a test, even though I do not have symptoms"
+                },
+                {
+                    value: "gp",
+                    text: "A GP or other healthcare professional has asked me to get a test"
+                }
+            ]
+        }) }}
+    {% endset %}
+    {# end of conditional radios #}
+
+    <form class="form" action="priority-groups" method="post">
+        {{ govukRadios({
+            idPrefix: "reason-for-test",
+            name: "reason-for-test",
+            classes: "govuk-!-margin-top-6", 
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "If you are getting a test for someone you live with, answer for them."
+            },
+            items: [
+                {
+                    value: "contact",
+                    text: "I’ve been in contact with someone who’s tested positive for coronavirus",
+                    conditional: {
+                        html: contactConditional
+                    }
+                },
+                {
+                    value: "asked",
+                    text: "I was asked to get a test because I visited a venue where others have since tested positive"
+                },
+                {
+                    value: "toldWork",
+                    text: "I've been told to get a test by my nursery, work or place of education",
+                    conditional: {
+                        html: toldWorkConditional
+                    }
+                },
+                
+                {
+                    value: "toldHealth",
+                    text: "I’ve been told to get a test by my local council, health protection team or healthcare professional",
+                    conditional: {
+                        html: toldHealthConditional
+                    }
+                },
+                {
+                divider: "or"
+                },
+                {
+                    value: "none",
+                    text: "None of these"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+    </form>
+
+{% endblock %}
+
+
+

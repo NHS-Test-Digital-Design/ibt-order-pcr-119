@@ -2,7 +2,7 @@
 {% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form class="form" action="/r#-answer" method="post">
+    <form class="form" action="/vaccine-answer" method="post">
         {{ govukRadios({
             idPrefix: "vaccine",
             name: "vaccine",
@@ -35,8 +35,7 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4",
-            href: "#"
+            classes: "govuk-!-margin-top-4"
         }) }}
         
     </form>

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <form action="/-answer" class="form" method="post">
+    <form action="/delivery-address-answer" class="form" method="post">
 
         {% set titles %}
             <h1 class="govuk-heading-l">
@@ -22,9 +22,6 @@
                 legend: {
                     html: titles
                 }
-            },
-            hint: {
-                text: "The delivery address is where the test kit will be sent."
             },
             items: [
                 {

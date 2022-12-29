@@ -1,0 +1,61 @@
+{% set pageTitle = "COVID-19 treatments" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        Only a small group of people with a particular health condition are eligible for specific COVID-19 treatments.
+    </p>
+
+    <p class="govuk-body">
+        You can check if you're eligible using the guidance (the following links open in a new tab):
+    </p>
+
+    <ul class="govuk-list govuk-!-margin-bottom-9">
+        <li>
+            <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-care-and-treatments-for-coronavirus/treatments-for-coronavirus/" class="govuk-link" rel="noreferrer noopener" target="_blank">England: COVID-19 treatment guidance</a>
+        </li>
+        <li>
+            <a href="https://www.gov.wales/covid-19-treatments" class="govuk-link" rel="noreferrer noopener" target="_blank">Wales: COVID-19 treatment guidance</a>
+        </li>
+        <li>
+            <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19-treatments" class="govuk-link" rel="noreferrer noopener" target="_blank">Scotland: COVID-19 treatment guidance</a>
+        </li>
+        <li>
+            <a href="https://www.nidirect.gov.uk/articles/treatments-coronavirus-covid-19" class="govuk-link" rel="noreferrer noopener" target="_blank">Northern Ireland: COVID-19 treatment guidance</a>
+        </li>
+    </ul>
+
+    <form class="form" action="/treatments-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "treatments",
+            name: "treatments",
+            fieldset: {
+                legend: {
+                    text: "Are you eligible for COVID-19 treatments?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}
+

@@ -1,6 +1,19 @@
 {% set pageTitle = "When did these symptoms start?" %}
 {% extends "layout_service_step.html" %}
 
+{% if data['where-do-you-live'] == "england" %}
+    {% set nextUrl = "england/eligibility-eng" %}
+{% elif data['where-do-you-live'] == "scotland"%}
+    {% set nextUrl = "scotland/eligibility-scot" %}
+{% elif data['where-do-you-live'] == "ni"%}
+    {% set nextUrl = "exit/service-ended-ni" %}
+{% elif data['where-do-you-live'] == "wales"%}
+    {% set nextUrl = "wales/eligibility-wales" %}
+{% else %}
+    {% set nextUrl = "england/eligibility-eng" %}
+{% endif %}
+
+
 {% block content %}
     {% set beforeDate %}
         {{ govukDateInput({
@@ -33,7 +46,7 @@
         }) }}
     {% endset %}
 
-    <form action="eligibility" method="post">
+    <form action={{ nextUrl }} method="post">
         
         {{ govukRadios({
             idPrefix: "date-of-onset",

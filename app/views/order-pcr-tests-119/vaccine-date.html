@@ -19,7 +19,7 @@
         If you have had 2 or more doses, tell us when you had your most recent dose. This includes boosters.
     </p>
 
-    <form class="form" action="/r#-answer" method="post">
+    <form class="form" action="check-answers" method="post">
         {{ govukRadios({
             idPrefix: "vaccine",
             name: "vaccine",
@@ -49,8 +49,7 @@
         {# https://design-system.service.gov.uk/components/button/ #}
         {{ govukButton({
             text: "Continue",
-            classes: "govuk-!-margin-top-4",
-            href: "#"
+            classes: "govuk-!-margin-top-4"
         }) }}
         
     </form>

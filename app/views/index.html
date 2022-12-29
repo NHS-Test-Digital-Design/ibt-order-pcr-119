@@ -18,12 +18,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body">
-        If you're in Scotland, you might be eligible to get a free polymerase chain reaction (PCR) test to check if you have coronavirus (COVID-19).
-      </p>
 
-      {{ govukInsetText({
-        text: "In England, Wales and Northern Ireland you can no longer order free PCR tests to check if you have COVID-19."
+      {{ govukWarningText({
+        text: "In England, Wales and Northern Ireland you can no longer order free PCR tests to check if you have COVID-19.",
+        iconFallbackText: "Warning"
       }) }}
 
       <p class="govuk-body">
@@ -48,30 +46,6 @@
         href: "/order-pcr-tests-119/country",
         isStartButton: true,
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-      }) }}
-
-      <h2 class="govuk-heading-m">
-        Order or book a test by phone.
-      </h2>
-
-      <p class="govuk-body">
-        If you’re eligible for a PCR test and have problems or cannot use the online service, call 119. 
-      </p>
-
-      <p class="govuk-body">
-        Lines are open: 
-      </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          Monday to Friday (including <a href="https://www.gov.uk/bank-holidays" class="govuk-link">bank holidays</a>), 8am to 6pm
-        </li>
-        <li>
-          Saturday and Sunday, 9am to 1pm
-        </li>
-      </ul>
-
-      {{ govukInsetText({
-        text: "If no tests are available online, do not call helplines to ge a test. No extra tests are available through the helplines"
       }) }}
 
       <h2 class="govuk-heading-m">Getting a rapid lateral flow test</h2>
@@ -116,7 +90,7 @@
           <a href="#" class="govuk-link">Wales: NHS 111 Wales</a>
         </li>
         <li>
-          <a href="#" class="govuk-link">Northern Ireland: get advice from a GP or GP out-of-hours service</a>
+          Northern Ireland: get advice from a GP or GP out-of-hours service
         </li>
       </ul>
 

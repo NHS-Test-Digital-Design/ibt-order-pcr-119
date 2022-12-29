@@ -1,63 +1,32 @@
-{% set pageTitle = "You are not eligible for PCR tests  " %}
+{% set pageTitle = "You can no longer get a free PCR test" %}
 {% extends "layout_service_step.html" %}
 
-{# *** ENGLAND - ENGLAND - ENGLAND *** #}
+
 
 {% block content %}
     <h1 class="govuk-heading-l">
         {{ pageTitle }}
     </h1>
 
-    {{ govukWarningText({
-        text: "Do not phone for a test. You will not be able to get one this way.",
-        iconFallbackText: "Warning"
-    }) }}
-
     <p class="govuk-body">
-        You might be able to <a href="#" class="govuk-link">get rapid lateral flow tests</a> instead. 
+        If you have symptoms, follow the guidance (the following links open in a new tab): 
     </p>
     
-    <p class="govuk-body">
-        Find out more about:
-    </p>
-
     <ul class="govuk-list">
         <li>
-            <a href="#" class="govuk-link">rapid lateral flow tests in England</a>
+            <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/when-to-self-isolate-and-what-to-do/" class="govuk-link" rel="noreferrer noopener" target="_blank">England: symptoms guidance</a>
         </li>
         <li>
-            <a href="#" class="govuk-link">rapid lateral flow tests in Scotland</a>
+            <a href="https://www.nhsinform.scot/covid19" class="govuk-link" rel="noreferrer noopener" target="_blank">Scotland: symptoms guidance</a>
         </li>
         <li>
-            <a href="#" class="govuk-link">rapid lateral flow tests in Wales</a>
-        </li>
-        <li>
-            <a href="#" class="govuk-link">rapid lateral flow tests in Northern Ireland</a>
+            <a href="https://www.gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19" class="govuk-link" rel="noreferrer noopener" target="_blank">Wales: symptoms guidance</a>
         </li>
     </ul>
 
-    <h2 class="govuk-heading-m">
-        If you're worried
-    </h2>
-
     <p class="govuk-body">
-        Find out <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/how-to-avoid-catching-and-spreading-coronavirus-covid-19/" class="govuk-link"> how to avoid catching and spreading COVID-19</a>.
+        If your COVID-19 symptoms are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.
     </p>
 
-    <p class="govuk-body">
-        You can also find <a href="https://www.nhs.uk/every-mind-matters/coronavirus/" class="govuk-link">advice and support if you're worried about COVID-19</a>.
-    </p>
-
-    <h2 class="govuk-heading-m">
-        If you have symptoms
-    </h2>
-    <p class="govuk-body">
-        Find out <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/symptoms/main-symptoms/" class="govuk-link"> what to do if you think you have COVID-19</a>.
-    </p>
-
-    <p class="govuk-body">
-        If you have symptoms and they get worse, contact 111 or speak to your GP. In an emergency dial 999. 
-    </p>
 {% endblock %}
 
-{# *** ENGLAND - ENGLAND - ENGLAND *** #}

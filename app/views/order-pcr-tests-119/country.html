@@ -1,8 +1,8 @@
-{% set pageTitle = "Where in the UK do you live?" %}
+{% set pageTitle = "Where is the delivery address?" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form class="form" action="condition" method="post">
+    <form class="form" action="symptoms" method="post">
         {{ govukRadios({
             idPrefix: "where-do-you-live",
             name: "where-do-you-live",
@@ -12,6 +12,9 @@
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
                 }
+            },
+            hint:{
+                text: "If you do not normally live in the UK, select the country where you're staying while you're in the UK."
             },
             items: [
                 {

@@ -1,0 +1,38 @@
+{% set pageTitle = "Check if you are eligible for a PCR test" %}
+{% extends "layout_service_step.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+        You can only get a PCR test if you're eligible for COVID-19 treatments and you've been asked to take PCR tests
+    </p>
+
+    <h2 class="govuk-heading-m">
+        If you have symptoms and you're worried
+    </h2>
+    <p class="govuk-body">
+        If your symptoms do not get better or get worse, call 111 or your GP. In an emergency call 999.
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+    <h2 class="govuk-heading-m">
+            Disclaimer
+    </h2>
+    <p class="govuk-body">
+        By selecting 'Confirm and continue', I confirm I am eligible to get a PCR test.
+    </p>
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+            text: "Confirm and continue",
+            classes: "govuk-!-margin-top-4",
+            href: "../treatments"
+        }) }}
+        <a class="govuk-link" href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19/" draggable="false">
+            I am not eligible
+        </a>
+    </div>
+
+{% endblock %}

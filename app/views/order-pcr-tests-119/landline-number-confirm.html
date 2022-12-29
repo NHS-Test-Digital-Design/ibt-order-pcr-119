@@ -1,4 +1,4 @@
-{% set pageTitle = "Do you have a mobile number where you can get the test results?" %}
+{% set pageTitle = "Do you have landline telephone number?" %}
 {% extends "layout_service_step.html" %}
 
 {% block content %}
@@ -6,16 +6,9 @@
         {{ pageTitle }}
     </h1>
 
-    <p class="govuk-body">
-        If you're getting a test for a child, you (their parent or guardian) should enter your number. If you're getting a test for someone aged 16 or older, make sure they're happy for their test results to go to this number.
-    </p>
+    <form class="form" action="gender" method="post">
 
-    <form class="form" action="landline-number-confirm" method="post">
-
-        {% set mobileInput %}
-            <p class="govuk-body">
-                Make sure you're happy for your test results to go to this mobile number
-            </p>
+        {% set landlineInput %}
             {{ govukInput({
                 id: "mobile",
                 name: "mobile",
@@ -24,7 +17,7 @@
                 autocomplete: "tel",
                 spellcheck: false,
                 label: {
-                    text: "Mobile number"
+                    text: "Landline telephone number"
                 }             
             }) }}
             {# {{ govukInput({
@@ -42,14 +35,14 @@
         {% endset %}
 
         {{ govukRadios({
-            idPrefix: "hasMobile",
-            name: "hasMobile",
+            idPrefix: "hasLandline",
+            name: "hasLandline",
             items: [
                 {
                     value: "yes",
                     text: "Yes",
                     conditional: {
-                        html: mobileInput
+                        html: landlineInput
                     }
                 },
                 {

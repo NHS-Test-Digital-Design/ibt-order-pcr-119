@@ -6,10 +6,19 @@ const router = express.Router()
 
 router.post('/symptoms-answer', function (req, res) {
     var symptoms = req.session.data['do-you-have-symptoms']
+    var country = req.session.data['where-do-you-live']
     if (symptoms == "yes") {
         res.redirect('order-pcr-tests-119/when-did-symptoms-start')
+    } else if (symptoms == "no" && country == "england" ) {
+        res.redirect('order-pcr-tests-119/england/eligibility-eng')
+    } else if (symptoms == "no" && country == "scotland" ) {
+        res.redirect('order-pcr-tests-119/scotland/eligibility-scot')
+    } else if (symptoms == "no" && country == "ni" ) {
+        res.redirect('order-pcr-tests-119/exit/service-ended-ni')
+    } else if (symptoms == "no" && country == "wales" ) {
+        res.redirect('order-pcr-tests-119/wales/eligibility-wales')
     } else {
-        res.redirect('order-pcr-tests-119/eligibility')
+        res.redirect('order-pcr-tests-119/england/eligibility-eng')
     }
 })
 
@@ -58,6 +67,46 @@ router.post('/gp-address-answer', function (req, res) {
         res.redirect('order-pcr-tests-119/address/gp-address-postcode')
     } else {
         res.redirect('order-pcr-tests-119/nhs-number')
+    }
+})
+
+// treatments answer.
+router.post('/treatments-answer', function (req, res) {
+    var treatment = req.session.data['treatments']
+    if (treatment == "no") {
+        res.redirect('order-pcr-tests-119/exit/not-eligible')
+    } else {
+        res.redirect('order-pcr-tests-119/reason-for-test')
+    }
+})
+
+// travel-overseas answer.
+router.post('/travel-answer', function (req, res) {
+    var overseas = req.session.data['travel']
+    if (overseas == "no") {
+        res.redirect('order-pcr-tests-119/tested-positive-before')
+    } else {
+        res.redirect('order-pcr-tests-119/travel-country')
+    }
+})
+
+// vaccine answer.
+router.post('/vaccine-answer', function (req, res) {
+    var vax = req.session.data['vaccine']
+    if (vax == "no") {
+        res.redirect('order-pcr-tests-119/check-answers')
+    } else {
+        res.redirect('order-pcr-tests-119/vaccine-date')
+    }
+})
+
+// vaccine answer.
+router.post('/delivery-address-answer', function (req, res) {
+    var delivery = req.session.data['confirmDeliveryAddress']
+    if (delivery == "no") {
+        res.redirect('order-pcr-tests-119/address/delivery-address-postcode')
+    } else {
+        res.redirect('order-pcr-tests-119/order-summary')
     }
 })
 

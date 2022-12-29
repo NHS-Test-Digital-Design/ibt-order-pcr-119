@@ -50,7 +50,7 @@
     </h2>
 
     <p class="govuk-body">
-        By ordering a PCR home test kit I confirm that:
+        By ordering a PCR test kit I confirm that:
     </p>
 
     <ul class="govuk-list govuk-list--bullet">
@@ -58,21 +58,21 @@
             The information I've provided is up to date and correct 
         </li>
         <li>
-            I agree with the Terms and conditions and Privacy policy of this service 
+            I agree with the <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Terms and conditions (opens in new tab)</a> and <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Privacy policy (open in new tab)</a> of this service 
         </li>
         <li>
-            I am happy to be contacted about my order 
+            I'm happy to be contacted about my order 
         </li>
         <li>
             I'll aim to return the kit within 24 hours
         </li>
     </ul>
-
+    
     {# https://design-system.service.gov.uk/components/button/ #}
     {{ govukButton({
         text: "Agree and place order",
         classes: "govuk-!-margin-top-4",
-        href: "#"
+        href: "order-received"
     }) }}
 
 
