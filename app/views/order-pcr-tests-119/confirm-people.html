@@ -7,17 +7,20 @@
     </h1>
 
     <p class="govuk-body">
-        You can <strong>add up to 3 people</strong> you live with for testing, unless you're getting a test after a positive day 2 test. You can only order one day 2 travel test at a time.
-    </p>
-
-    <p class="govuk-body">
-        If you need tests for <strong>more than yourself and 3 other people</strong>, you'll need to complete this journey again and place a separate order.
+        You can <strong>add up to 3 people</strong> you live with for testing. If you need tests for <strong>more than yourself and 3 other people</strong>, you'll need to completethis journey again and place a separate order.
     </p>
 
     <h2 class="govuk-heading-m">
-        PCR test
+        For home testing
     </h2>
     
+    <p class="govuk-body">
+        You cannot order more than 4 home test kits at a time.
+    </p>
+    
+    <h2 class="govuk-heading-m">
+        PCR test
+    </h2>
     {{ govukSummaryList({
         rows: [
             {
@@ -25,14 +28,14 @@
                     text: "Alex Kidd"
                 },
                 value: {
-                    html: "<p class='govuk-body'>your@email.com</p><p class='govuk-body'>07766 554321</p>"
+                    html: "<p class='govuk-body'>01 December 1980</p><p class='govuk-body'>your@email.com</p><p class='govuk-body'>07766 554321</p>"
                 },
                 actions: {
                     items: [
                         {
                             href: "Item URL",
-                            text: "Change",
-                            visuallyHiddenText: "change personal detais"
+                            text: "Edit details",
+                            visuallyHiddenText: "Edit personal detais"
                         }
                     ]
                 }
