@@ -76,9 +76,19 @@ router.post('/treatments-answer', function (req, res) {
     if (treatment == "no") {
         res.redirect('order-pcr-tests-119/exit/not-eligible')
     } else {
-        res.redirect('order-pcr-tests-119/reason-for-test')
+        res.redirect('order-pcr-tests-119/priority-groups')
     }
 })
+
+// // priority groups answer.
+// router.post('/priority-group-answer', function (req, res) {
+//     var priority = req.session.data['priority-group']
+//     if (priority == "yes") {
+//         res.redirect('order-pcr-tests-119/name')
+//     } else {
+//         res.redirect('order-pcr-tests-119/priority-groups')
+//     }
+// })
 
 // travel-overseas answer.
 router.post('/travel-answer', function (req, res) {
