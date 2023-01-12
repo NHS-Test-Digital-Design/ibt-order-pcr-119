@@ -1,6 +1,165 @@
 {% set pageTitle = "Check your answers" %}
 {% extends "layout_service_step.html" %}
 
+{% set monthConvert %}
+    {% if data['dob-month'] or data['date-asked-month'] == "1" %}
+        January
+    {% elif data['dob-month'] or data['date-asked-month'] == "2" %}
+        February
+    {% elif data['dob-month'] or data['date-asked-month'] == "3" %}
+        March
+    {% elif data['dob-month'] or data['date-asked-month'] == "4" %}
+        April
+    {% elif data['dob-month'] or data['date-asked-month'] == "5" %}
+        May
+    {% elif data['dob-month'] or data['date-asked-month'] == "6" %}
+        June
+    {% elif data['dob-month'] or data['date-asked-month'] == "7" %}
+        July
+    {% elif data['dob-month'] or data['date-asked-month'] == "8" %}
+        August
+    {% elif data['dob-month'] or data['date-asked-month'] == "9" %}
+        September
+    {% elif data['dob-month'] or data['date-asked-month'] == "10" %}
+        October
+    {% elif data['dob-month'] or data['date-asked-month'] == "11" %}
+        November
+    {% elif data['dob-month'] or data['date-asked-month'] == "12" %}
+        December
+    {% endif %}
+{% endset %}
+
+{% set priority %}
+    {% if data['priority-group'] == "yes" %}
+        Yes
+    {% elif data['priority-group'] == "do-not-know" %}
+        Don't know
+    {% else %}
+        No
+    {% endif %}
+{% endset %}
+
+{% set name %}
+    {% if data['first-name'] %}
+        {{ data['first-name'] + " " + data['last-name'] }}
+    {% else %}
+        Alex Kidd
+    {% endif %}
+{% endset %}
+
+{% set birthDate %}
+    {% if data['dob-day'] %}
+        {{ data['dob-day'] + monthConvert + data['dob-year'] }}
+        {% else %}
+        4 March 1980
+    {% endif %}
+{% endset %}
+
+{% set email %}
+    {% if data['email'] %}
+        {{ data['email'] }}
+        {% else %}
+        your@email-is.cool
+    {% endif %}
+{% endset %}
+
+{% set mobileNumber %}
+    {% if data['mobile'] %}
+        {{ data['mobile'] }}
+        {% else %}
+        07766 554321
+    {% endif %}
+{% endset %}
+
+{% set landlineNumber %}
+    {% if data['landline'] %}
+        {{ data['landline'] }}
+        {% else %}
+        0113 2674 123
+    {% endif %}
+{% endset %}
+
+
+{% set contactDetails %}
+    <p class="govuk-body">
+        {{ email }}
+    </p>
+    <p class="govuk-body">
+        {{ mobileNumber }}
+    </p>
+    <p class="govuk-body">
+        {{ landlineNumber }}
+    </p>
+{% endset %}
+
+{% set gender %}
+    {% if data['gender'] == "male"%}
+        Male
+    {% elif data['gender'] == "female" %}
+        Female
+    {% else %}
+        Other / Not specified / I do not know
+    {% endif %}
+{% endset %}
+
+{% set ethnicGroup %}
+    {% if data['ethnic-group'] == "asian-british-asian"%}
+        Asian or Asian British
+    {% elif data['ethnic-group'] == "black" %}
+        Black, African, Black British or Caribbean
+    {% elif data['ethnic-group'] == "mixed" %}
+        Mixed or multiple ethnic groups
+    {% elif data['ethnic-group'] == "white" %}
+        White
+    {% elif data['ethnic-group'] == "another" %}
+        Another ethnic groupite
+    {% else %}
+        Prefer not to say
+    {% endif %}
+{% endset %}
+
+{% set ethnicBackground %}
+    {% if data['ethnic-background'] == "arab"%}
+        Arab
+    {% elif data['ethnic-background'] == "another" %}
+        Another ethnic background
+    {% elif data['ethnic-background'] == "not-say" %}
+        Prefer not to say
+    {% elif data['ethnic-background'] == "bangladeshi" %}
+        Bangladeshi
+    {% elif data['ethnic-background'] == "chinese" %}
+        Chinese
+    {% elif data['ethnic-background'] == "indian" %}
+        Indian
+    {% elif data['ethnic-background'] == "pakistani" %}
+        Pakistani
+    {% elif data['ethnic-background'] == "african" %}
+        African
+    {% elif data['ethnic-background'] == "caribbean" %}
+        Caribbean
+    {% elif data['ethnic-background'] == "asian-white" %}
+        Asian and White
+    {% elif data['ethnic-background'] == "black-african-white" %}
+        Black African and White
+    {% elif data['ethnic-background'] == "irish" %}
+        Irish
+    {% elif data['ethnic-background'] == "travller" %}
+        "Irish Traveller or Gypsy
+    {% else %}
+        British, English, Northern Irish, Scottish, or Welsh
+    {% endif %}
+{% endset %}
+
+{% set nhsNumber %}
+    {% if data['nhsNumber'] %}
+        {{ data['nhsNumber'] }}
+        {% else %}
+        123 456 7890 
+    {% endif %}
+{% endset %}
+
+
+
 {% block content %}
     {# https://design-system.service.gov.uk/styles/typography/#headings #}
     <h1 class="govuk-heading-l">
@@ -22,12 +181,12 @@
                     text: "Priority group"
                 },
                 value: {
-                    text: "No"
+                    text: priority
                 },
                 actions: {
                     items: [
                         {
-                            href: "#",
+                            href: "priority-groups",
                             text: "Change",
                             visuallyHiddenText: "change priority group"
                         }
@@ -39,12 +198,12 @@
                     text: "Name"
                 },
                 value: {
-                    text: "Alex Kidd"
+                    text: name
                 },
                 actions: {
                     items: [
                         {
-                            href: "#",
+                            href: "name",
                             text: "Change",
                             visuallyHiddenText: "change name"
                         }
@@ -56,12 +215,12 @@
                     text: "Date of birth"
                 },
                 value: {
-                    text: "6 December 2000"
+                    text: birthDate
                 },
                 actions: {
                     items: [
                         {
-                            href: "#",
+                            href: "age",
                             text: "Change",
                             visuallyHiddenText: "change date of birth"
                         }
@@ -73,31 +232,14 @@
                     text: "Contact details"
                 },
                 value: {
-                    html: "<p class='govuk-body'>your@email.com</p><p class='govuk-body'>07766 554321</p>"
+                    html: contactDetails
                 },
                 actions: {
                     items: [
                         {
-                            href: "#",
+                            href: "email",
                             text: "Change",
                             visuallyHiddenText: "change your contact details"
-                        }
-                    ]
-                }
-            },
-            {
-                key: {
-                    text: "Country of residence"
-                },
-                value: {
-                    text: "England"
-                },
-                actions: {
-                    items: [
-                        {
-                            href: "#",
-                            text: "Change",
-                            visuallyHiddenText: "change your country of residance"
                         }
                     ]
                 }
@@ -138,15 +280,32 @@
             },
             {
                 key: {
-                    text: "Ethnicity"
+                    text: "Ethnic group"
                 },
                 value: {
-                    text: "white"
+                    text: ethnicGroup
                 },
                 actions: {
                     items: [
                         {
-                            href: "#",
+                            href: "ethnicity/ethnic-group",
+                            text: "Change",
+                            visuallyHiddenText: "change ethnic group"
+                        }
+                    ]
+                }
+            },
+            {
+                key: {
+                    text: "Ethnic background"
+                },
+                value: {
+                    text: ethnicBackground
+                },
+                actions: {
+                    items: [
+                        {
+                            href: "ethnicity/ethnic-background",
                             text: "Change",
                             visuallyHiddenText: "change ethnicity"
                         }
@@ -158,12 +317,12 @@
                     text: "Medical record (male, female, other…) "
                 },
                 value: {
-                    text: "Male"
+                    text: gender
                 },
                 actions: {
                     items: [
                         {
-                            href: "#",
+                            href: "gender",
                             text: "Change",
                             visuallyHiddenText: "change medical record"
                         }
@@ -175,12 +334,12 @@
                     text: "NHS number"
                 },
                 value: {
-                    text: "123 456 7890"
+                    text: nhsNumber
                 },
                 actions: {
                     items: [
                         {
-                            href: "#",
+                            href: "nhs-number",
                             text: "Change",
                             visuallyHiddenText: "change NHS number"
                         }
