@@ -4,6 +4,22 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 
+
+// country answer.
+router.post('/country-answer', function (req, res) {
+    var country = req.session.data['where-do-you-live']
+    if (country == "scotland") {
+        res.redirect('order-pcr-tests-119/exit/service-ended-scotland')
+    } else if (country == "ni"){
+        res.redirect('order-pcr-tests-119/exit/service-ended-ni')
+    } else if (country == "wales"){
+        res.redirect('order-pcr-tests-119/exit/service-ended-wales')
+    } else {
+        res.redirect('order-pcr-tests-119/symptoms')
+    }
+})
+
+
 router.post('/symptoms-answer', function (req, res) {
     var symptoms = req.session.data['do-you-have-symptoms']
     var country = req.session.data['where-do-you-live']
