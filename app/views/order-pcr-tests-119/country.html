@@ -2,7 +2,7 @@
 {% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form class="form" action="symptoms" method="post">
+    <form class="form" action="/country-answer" method="post">
         {{ govukRadios({
             idPrefix: "where-do-you-live",
             name: "where-do-you-live",
